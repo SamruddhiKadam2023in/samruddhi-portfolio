@@ -11,7 +11,7 @@ export function ScrollManager() {
 
   useEffect(() => {
     if (!hash) {
-      window.scrollTo({ top: 0, behavior: 'auto' });
+      window.scrollTo({ top: 0, behavior: 'instant' });
       return;
     }
     const id = decodeURIComponent(hash.slice(1));
