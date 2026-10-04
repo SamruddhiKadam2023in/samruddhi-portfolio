@@ -10,11 +10,17 @@ import RouteError from './pages/RouteError';
 
 // Case studies are split out so the home page loads only what it needs,
 // then fetched in the background once the browser is idle so navigation stays instant.
-const loadProjectDetails = () => import('./pages/ProjectDetails');
+// A failed load (offline, interrupted prefetch) is not cached, so the next attempt retries.
+let projectDetails: Promise<typeof import('./pages/ProjectDetails')> | undefined;
+const loadProjectDetails = () =>
+  (projectDetails ??= import('./pages/ProjectDetails').catch((error: unknown) => {
+    projectDetails = undefined;
+    throw error;
+  }));
 const ProjectDetails = lazy(loadProjectDetails);
 
 if (typeof window !== 'undefined') {
-  const prefetch = () => void loadProjectDetails();
+  const prefetch = () => void loadProjectDetails().catch(() => undefined);
   if ('requestIdleCallback' in window) window.requestIdleCallback(prefetch, { timeout: 4000 });
   else setTimeout(prefetch, 2500);
 }

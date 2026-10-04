@@ -1,6 +1,7 @@
 import { AnimatePresence, m } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useLocation } from 'react-router';
 import { navItems } from '../../data/site';
 import { useActiveSection } from '../../hooks/useActiveSection';
@@ -19,7 +20,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
-  const panel = useRef<HTMLDivElement>(null);
+  const panel = useRef<HTMLElement>(null);
 
   useScrollLock(open);
 
@@ -109,40 +110,47 @@ export function Navbar() {
         </div>
       </nav>
 
-      <AnimatePresence>
-        {open && (
-          <m.div
-            ref={panel}
-            id="mobile-menu"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="overflow-hidden border-t border-line md:hidden"
-          >
-            <ul className="container-page flex h-[calc(100dvh-4rem)] flex-col gap-1 py-6">
-              {navItems.map((item, index) => (
-                <li key={item.id}>
-                  <SectionLink
-                    sectionId={item.id}
-                    onNavigate={close}
-                    aria-current={isCurrent(item.id) ? 'location' : undefined}
-                    className={cn(
-                      'flex items-baseline gap-4 rounded-lg px-2 py-3 text-2xl font-medium tracking-tight transition-colors',
-                      isCurrent(item.id) ? 'text-fg' : 'text-fg-secondary hover:text-fg',
-                    )}
-                  >
-                    <span className="font-mono text-xs text-accent">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    {item.label}
-                  </SectionLink>
-                </li>
-              ))}
-            </ul>
-          </m.div>
-        )}
-      </AnimatePresence>
+      {/* Portalled to <body>: the header's backdrop-filter would otherwise contain the fixed panel. */}
+      {createPortal(
+        <AnimatePresence>
+          {open && (
+            <m.nav
+              ref={panel}
+              id="mobile-menu"
+              aria-label="Mobile"
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              // Fixed overlay: it must not take up space in the page, or the page would shift
+              // when it closes and section links would land in the wrong place.
+              className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto border-t border-line bg-bg md:hidden"
+            >
+              <ul className="container-page flex flex-col gap-1 py-6">
+                {navItems.map((item, index) => (
+                  <li key={item.id}>
+                    <SectionLink
+                      sectionId={item.id}
+                      onNavigate={close}
+                      aria-current={isCurrent(item.id) ? 'location' : undefined}
+                      className={cn(
+                        'flex items-baseline gap-4 rounded-lg px-2 py-3 text-2xl font-medium tracking-tight transition-colors',
+                        isCurrent(item.id) ? 'text-fg' : 'text-fg-secondary hover:text-fg',
+                      )}
+                    >
+                      <span className="font-mono text-xs text-accent">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      {item.label}
+                    </SectionLink>
+                  </li>
+                ))}
+              </ul>
+            </m.nav>
+          )}
+        </AnimatePresence>,
+        document.body,
+      )}
     </header>
   );
 }
