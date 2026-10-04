@@ -3,7 +3,7 @@
 A fast, accessible personal portfolio that presents the software I have built: full-stack
 applications, developer tools and intelligent systems.
 
-**Live site:** https://samruddhi-portfolio-black.vercel.app
+**Live site:** https://samruddhi-dev-portfolio.vercel.app
 
 ![Portfolio preview](public/og-image.png)
 

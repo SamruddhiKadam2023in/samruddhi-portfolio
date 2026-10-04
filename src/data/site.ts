@@ -8,7 +8,7 @@ export const site: SiteInfo = {
   description:
     'Full-stack applications, developer tools, data-driven platforms, and intelligent systems.',
   // Production URL; keep in sync with index.html, public/robots.txt and public/sitemap.xml.
-  url: 'https://samruddhi-portfolio-black.vercel.app',
+  url: 'https://samruddhi-dev-portfolio.vercel.app',
   seoDescription:
     'Samruddhi Kadam builds full-stack apps, developer tools and intelligent systems like PropAI, TraceLayer and UrbanPuls, using React, TypeScript, Python and FastAPI.',
 };
