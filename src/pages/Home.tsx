@@ -5,10 +5,10 @@ import { TechStrip } from '../components/hero/TechStrip';
 import { Projects } from '../components/projects/Projects';
 import { SkillSelectionProvider } from '../components/skills/SkillSelectionProvider';
 import { Skills } from '../components/skills/Skills';
-import { useDocumentTitle } from '../hooks/useDocumentTitle';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 export default function Home() {
-  useDocumentTitle();
+  usePageMeta();
 
   return (
     <SkillSelectionProvider>

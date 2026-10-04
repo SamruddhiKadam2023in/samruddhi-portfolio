@@ -2,10 +2,69 @@
 <html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0c0d0f" />
-    <title>Samruddhi Kadam — Developer</title>
+
+    <!--
+      SITE URL: https://samruddhi-portfolio.vercel.app is provisional until the first deployment.
+      Update it here, in src/data/site.ts, public/robots.txt and public/sitemap.xml.
+    -->
+    <title>Samruddhi Kadam — Software Developer</title>
+    <meta
+      name="description"
+      content="Samruddhi Kadam builds full-stack apps, developer tools and intelligent systems like PropAI, TraceLayer and UrbanPuls, using React, TypeScript, Python and FastAPI."
+    />
+    <meta name="author" content="Samruddhi Sanjay Kadam" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://samruddhi-portfolio.vercel.app/" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Samruddhi Kadam" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Samruddhi Kadam — Software Developer" />
+    <meta
+      property="og:description"
+      content="Samruddhi Kadam builds full-stack apps, developer tools and intelligent systems like PropAI, TraceLayer and UrbanPuls, using React, TypeScript, Python and FastAPI."
+    />
+    <meta property="og:url" content="https://samruddhi-portfolio.vercel.app/" />
+    <meta property="og:image" content="https://samruddhi-portfolio.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Samruddhi Kadam — I build useful software and intelligent systems."
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Samruddhi Kadam — Software Developer" />
+    <meta
+      name="twitter:description"
+      content="Samruddhi Kadam builds full-stack apps, developer tools and intelligent systems like PropAI, TraceLayer and UrbanPuls, using React, TypeScript, Python and FastAPI."
+    />
+    <meta name="twitter:image" content="https://samruddhi-portfolio.vercel.app/og-image.png" />
+
+    <!-- Structured data: who this site is about -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Samruddhi Sanjay Kadam",
+        "alternateName": "Samruddhi Kadam",
+        "jobTitle": "Software Developer",
+        "url": "https://samruddhi-portfolio.vercel.app/",
+        "email": "mailto:samruddhikadam.dev@gmail.com",
+        "sameAs": [
+          "https://github.com/SamruddhiKadam2023in",
+          "https://www.linkedin.com/in/-samruddhi-kadam/"
+        ]
+      }
+    </script>
+
     <script>
       // Apply the theme before first paint: saved choice, else system preference, else dark.
       (function () {
@@ -20,6 +79,12 @@
     </script>
   </head>
   <body>
+    <noscript>
+      <p style="padding: 2rem; font-family: system-ui, sans-serif">
+        Samruddhi Kadam — Software Developer. This site needs JavaScript. Projects:
+        <a href="https://github.com/SamruddhiKadam2023in">github.com/SamruddhiKadam2023in</a>
+      </p>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

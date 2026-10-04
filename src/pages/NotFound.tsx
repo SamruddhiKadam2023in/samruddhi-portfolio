@@ -1,10 +1,10 @@
 import { ArrowLeft } from 'lucide-react';
 import { ButtonLink } from '../components/common/Button';
 import { ErrorState } from '../components/common/ErrorState';
-import { useDocumentTitle } from '../hooks/useDocumentTitle';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 export default function NotFound() {
-  useDocumentTitle('Page not found');
+  usePageMeta({ title: 'Page not found', noindex: true });
 
   return (
     <ErrorState

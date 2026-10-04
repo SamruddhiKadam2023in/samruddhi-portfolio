@@ -14,7 +14,8 @@ import { ScreenshotGallery } from '../components/projects/case-study/ScreenshotG
 import { TechGroups } from '../components/projects/case-study/TechGroups';
 import { caseStudies } from '../data/caseStudies';
 import { getProjectBySlug } from '../data/projects';
-import { useDocumentTitle } from '../hooks/useDocumentTitle';
+import { usePageMeta } from '../hooks/usePageMeta';
+import { summarize } from '../utils/text';
 
 interface Section {
   id: string;
@@ -26,7 +27,15 @@ export default function ProjectDetails() {
   const { slug } = useParams();
   const project = getProjectBySlug(slug);
   const study = project ? caseStudies[project.id] : undefined;
-  useDocumentTitle(project && study ? `${project.title} case study` : 'Project not found');
+  usePageMeta(
+    project && study
+      ? {
+          title: `${project.title} case study`,
+          description: summarize(`${project.tagline}. ${project.shortDescription}`),
+          path: `/projects/${project.slug}`,
+        }
+      : { title: 'Project not found', noindex: true },
+  );
 
   if (!project || !study) {
     return (
