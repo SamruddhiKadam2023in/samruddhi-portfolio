@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, ArrowRight } from 'lucide-react';
 import { site } from '../../data/site';
-import { cn } from '../../utils/cn';
 import { buttonClasses } from '../common/buttonClasses';
 import { SocialLinks } from '../common/SocialLinks';
 import { SectionLink } from '../navigation/SectionLink';
@@ -28,7 +27,7 @@ export function Hero() {
       />
 
       <div className="container-page grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
-        <div className="lg:col-span-7">
+        <div className="min-w-0 lg:col-span-7">
           <motion.p
             {...rise(0)}
             className="flex items-center gap-2.5 font-mono text-xs text-fg-secondary sm:text-sm"
@@ -82,7 +81,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease }}
-          className={cn('mx-auto w-full max-w-md lg:col-span-5 lg:max-w-none')}
+          className="mx-auto w-full max-w-md min-w-0 lg:col-span-5 lg:max-w-none"
         >
           <SystemDiagram />
         </motion.div>

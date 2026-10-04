@@ -72,14 +72,14 @@ export function Contact() {
 
         <Reveal delay={0.08} className="mt-12 grid gap-4 lg:grid-cols-5">
           {/* Email */}
-          <div className="rounded-2xl border border-line bg-surface p-6 shadow-card sm:p-8 lg:col-span-3">
+          <div className="min-w-0 rounded-2xl border border-line bg-surface p-5 shadow-card min-[360px]:p-6 sm:p-8 lg:col-span-3">
             <p className="flex items-center gap-2 font-mono text-xs text-fg-muted">
               <Mail size={14} aria-hidden />
               email
             </p>
             <a
               href={`mailto:${social.email}`}
-              className="mt-3 block text-lg font-medium tracking-tight break-words transition-colors hover:text-accent min-[400px]:text-xl sm:text-2xl"
+              className="mt-3 block text-base font-medium tracking-tight [overflow-wrap:anywhere] transition-colors hover:text-accent min-[360px]:text-lg min-[400px]:text-xl sm:text-2xl"
             >
               {social.email}
             </a>
