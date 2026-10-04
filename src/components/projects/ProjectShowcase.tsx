@@ -41,16 +41,21 @@ export function ProjectShowcase({ project, reversed }: ProjectShowcaseProps) {
       transition={{ duration: 0.5, ease }}
       className="scroll-mt-24"
     >
-      <motion.div
-        animate={{ opacity: dimmed ? 0.35 : 1 }}
-        transition={{ duration: 0.25 }}
+      <div
         className={cn(
           'grid items-center gap-8 rounded-3xl border p-4 transition-colors duration-300 sm:p-6 lg:grid-cols-12 lg:gap-12 lg:p-8',
           isMatch ? 'border-accent/50 bg-accent-soft' : 'border-transparent',
         )}
       >
         {/* Media */}
-        <div className={cn('lg:col-span-7', reversed && 'lg:order-2')}>
+        {/* Non-matching projects fade only their screenshots, so the text stays readable. */}
+        <div
+          className={cn(
+            'transition-[opacity,filter] duration-300 lg:col-span-7',
+            reversed && 'lg:order-2',
+            dimmed && 'opacity-35 grayscale',
+          )}
+        >
           {cover ? (
             <button
               type="button"
@@ -201,7 +206,7 @@ export function ProjectShowcase({ project, reversed }: ProjectShowcaseProps) {
             )}
           </div>
         </div>
-      </motion.div>
+      </div>
 
       <Lightbox
         title={project.title}
