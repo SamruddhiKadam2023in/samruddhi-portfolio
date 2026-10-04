@@ -1,41 +1,14 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { Link } from 'react-router';
-import { cn } from '../../utils/cn';
-
-type Variant = 'primary' | 'secondary' | 'ghost';
-type Size = 'sm' | 'md';
+import { buttonClasses, type ButtonSize, type ButtonVariant } from './buttonClasses';
 
 interface BaseProps {
-  variant?: Variant;
-  size?: Size;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
   icon?: ReactNode;
   iconPosition?: 'start' | 'end';
   className?: string;
   children: ReactNode;
-}
-
-const variants: Record<Variant, string> = {
-  primary: 'bg-accent text-accent-contrast hover:bg-accent-strong',
-  secondary: 'border border-line-strong text-fg hover:border-fg-muted hover:bg-surface-elevated',
-  ghost: 'text-fg-secondary hover:text-fg hover:bg-surface-elevated',
-};
-
-const sizes: Record<Size, string> = {
-  sm: 'h-9 px-3.5 text-sm gap-1.5',
-  md: 'h-11 px-5 text-[0.9375rem] gap-2',
-};
-
-function buttonClasses({
-  variant = 'primary',
-  size = 'md',
-  className,
-}: Pick<BaseProps, 'variant' | 'size' | 'className'>): string {
-  return cn(
-    'group inline-flex shrink-0 items-center justify-center rounded-full font-medium transition-colors duration-150 select-none',
-    variants[variant],
-    sizes[size],
-    className,
-  );
 }
 
 function Content({ icon, iconPosition = 'end', children }: Omit<BaseProps, 'variant' | 'size'>) {
