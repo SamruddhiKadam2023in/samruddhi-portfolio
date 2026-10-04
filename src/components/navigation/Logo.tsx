@@ -16,7 +16,7 @@ export function Logo({ onNavigate }: { onNavigate?: () => void }) {
       </span>
       <span className="text-[0.9375rem] font-semibold tracking-tight">
         {site.shortName}
-        <span className="sr-only"> — home</span>
+        <span className="sr-only">, home</span>
       </span>
     </SectionLink>
   );

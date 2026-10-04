@@ -100,7 +100,7 @@ export const projects: Project[] = [
     category: 'Developer Tools / API Observability',
     projectType: 'individual',
     shortDescription:
-      'Schedules recurring checks against your APIs, records every result, and turns it into uptime, latency percentiles, alerts and incidents with a timeline — all updating live in the browser.',
+      'Schedules recurring checks against your APIs, records every result, and turns it into uptime, latency percentiles, alerts and incidents with a timeline, all updating live in the browser.',
     technologies: [
       'React',
       'TypeScript',

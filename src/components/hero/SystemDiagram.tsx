@@ -1,5 +1,5 @@
 import { m } from 'framer-motion';
-import { BrainCircuit, Database, Monitor, Network, type LucideIcon } from 'lucide-react';
+import { BrainCircuit, Database, Monitor, Network, Server, type LucideIcon } from 'lucide-react';
 
 interface Layer {
   label: string;
@@ -10,7 +10,8 @@ interface Layer {
 // Each layer lists technologies actually used across the projects on this site.
 const layers: Layer[] = [
   { label: 'Frontend', stack: 'React · TypeScript · Vite', icon: Monitor },
-  { label: 'API', stack: 'FastAPI · Express · WebSockets', icon: Network },
+  { label: 'API', stack: 'REST · WebSockets · JWT auth', icon: Network },
+  { label: 'Backend', stack: 'Node.js · Express · FastAPI', icon: Server },
   { label: 'Data', stack: 'PostgreSQL · MongoDB · Redis', icon: Database },
   { label: 'Intelligence', stack: 'OCR · NLP · YOLO · OpenCV', icon: BrainCircuit },
 ];
@@ -21,7 +22,7 @@ const ease = [0.21, 0.6, 0.35, 1] as const;
 export function SystemDiagram() {
   return (
     <figure
-      aria-label="How the systems I build fit together: frontend, API, data and intelligence layers"
+      aria-label="How the systems I build fit together: frontend, API, backend, data and intelligence layers"
       className="relative rounded-2xl border border-line bg-surface/80 shadow-card backdrop-blur-sm"
     >
       <div className="flex items-center justify-between border-b border-line px-4 py-3">
@@ -43,7 +44,7 @@ export function SystemDiagram() {
                 initial={{ opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.35 + index * 0.12, ease }}
-                className="group flex items-center gap-4 rounded-xl border border-line bg-bg/60 px-4 py-3.5 transition-colors hover:border-accent/40"
+                className="group flex items-center gap-4 rounded-xl border border-line bg-bg/60 px-4 py-3 transition-colors hover:border-accent/40"
               >
                 <span className="grid size-9 shrink-0 place-items-center rounded-lg border border-line bg-surface text-fg-secondary transition-colors group-hover:text-accent">
                   <Icon size={17} aria-hidden />
@@ -60,7 +61,7 @@ export function SystemDiagram() {
               </m.div>
 
               {!last && (
-                <div aria-hidden className="relative ml-[2.15rem] h-5 w-px overflow-hidden">
+                <div aria-hidden className="relative ml-[2.15rem] h-4 w-px overflow-hidden">
                   <m.span
                     initial={{ scaleY: 0 }}
                     animate={{ scaleY: 1 }}

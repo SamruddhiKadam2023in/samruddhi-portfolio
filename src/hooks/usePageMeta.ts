@@ -13,7 +13,7 @@ interface PageMeta {
   noindex?: boolean;
 }
 
-const HOME_TITLE = `${site.shortName} — ${site.role}`;
+const HOME_TITLE = `${site.shortName} | ${site.role}`;
 const DEFAULT_IMAGE = '/og-image.png';
 
 function setMeta(attribute: 'name' | 'property', key: string, content: string) {

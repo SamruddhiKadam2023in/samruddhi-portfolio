@@ -19,7 +19,7 @@ export function Hero() {
     <section
       id="home"
       aria-labelledby="hero-title"
-      className="relative isolate overflow-hidden pt-12 pb-16 sm:pt-20 lg:pt-24 lg:pb-24"
+      className="relative isolate overflow-hidden pt-8 pb-14 sm:pt-12 lg:pt-14 lg:pb-20"
     >
       <div
         aria-hidden
@@ -30,10 +30,14 @@ export function Hero() {
         <div className="min-w-0 lg:col-span-7">
           <m.p
             {...rise(0)}
-            className="flex items-center gap-2.5 font-mono text-xs text-fg-secondary sm:text-sm"
+            className="flex items-center gap-3 font-mono text-sm text-fg-secondary sm:text-base lg:text-lg"
           >
-            <span aria-hidden className="size-1.5 rounded-full bg-accent" />
-            {site.shortName} — {site.role}
+            <span aria-hidden className="size-2 shrink-0 rounded-full bg-accent" />
+            {/* Name and role never split mid-phrase; on very narrow screens the role wraps whole. */}
+            <span className="flex flex-wrap gap-x-2">
+              <span className="whitespace-nowrap">{site.shortName} ·</span>
+              <span className="whitespace-nowrap">{site.role}</span>
+            </span>
           </m.p>
 
           <m.h1

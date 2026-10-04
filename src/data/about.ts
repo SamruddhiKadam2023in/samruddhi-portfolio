@@ -2,7 +2,7 @@ export const aboutIntro =
   'I build full-stack applications, developer tools, and intelligent systems that turn complex workflows and data into usable software.';
 
 export const aboutBody = [
-  'Most of what I build spans the whole stack: React and TypeScript on the front end, Python (FastAPI) and Node.js (Express) services behind it, and PostgreSQL, MongoDB and Redis underneath. When a problem calls for it, I add computer vision or NLP — reading utility bills with OCR, or detecting vehicles and terrain features with YOLO and OpenCV.',
+  'Most of what I build spans the whole stack: React and TypeScript on the front end, Python (FastAPI) and Node.js (Express) services behind it, and PostgreSQL, MongoDB and Redis underneath. When a problem calls for it, I add computer vision or NLP, such as reading utility bills with OCR or detecting vehicles and terrain features with YOLO and OpenCV.',
   'I care about what makes software dependable once it leaves my machine: tests that cover real user flows, clear states when things fail, secure defaults, and documentation someone else can actually follow.',
 ];
 

@@ -7,7 +7,7 @@ import type { CaseStudy } from '../types/project';
 export const caseStudies: Record<string, CaseStudy> = {
   propai: {
     overview: [
-      'PropAI is a full-stack property management platform with three roles — Tenant, Owner and Manager — each with its own dashboard and permissions.',
+      'PropAI is a full-stack property management platform with three roles (Tenant, Owner and Manager), each with its own dashboard and permissions.',
       'Its focus is the money side of renting: it reads utility bills, tracks rent and expenses, forecasts next month’s costs, and compares a rent with similar properties in the market.',
     ],
     problem: [
@@ -16,7 +16,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
     solution: [
       'A tenant uploads a bill and a background pipeline reads it in English and Marathi, classifies it, and extracts the vendor, amount, bill and due dates, billing period and address. A recognised electricity, water or gas bill becomes an expense on the tenant’s property, so the cost-analysis charts and the forecast fill themselves.',
-      'Anything the reader is unsure about is left empty and the document is flagged for the user to correct — a value is never guessed.',
+      'Anything the reader is unsure about is left empty and the document is flagged for the user to correct. A value is never guessed.',
       'Around that sits the full rental workflow: property listings, applications and approvals, agreements, payments with receipts, maintenance requests, messaging, notifications, and PDF and Excel reports.',
     ],
     architecture: [
@@ -95,7 +95,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       {
         title: 'OCR on a 512 MB free host',
         description:
-          'On a small free host the full reader hit the memory limit and took over two minutes per bill. A lite mode reads one pass at a time on a smaller image and loads no spaCy model, peaking around 260–290 MB.',
+          'On a small free host the full reader hit the memory limit and took over two minutes per bill. A lite mode reads one pass at a time on a smaller image and loads no spaCy model, peaking around 260 to 290 MB.',
       },
       {
         title: 'Hosts that wipe their disk',
@@ -132,7 +132,7 @@ export const caseStudies: Record<string, CaseStudy> = {
   tracelayer: {
     overview: [
       'TraceLayer is an API reliability and observability platform. It runs scheduled checks against APIs, records every result, and turns them into metrics, health status, alerts and incidents.',
-      'It is a pnpm monorepo with three apps — a React frontend, an Express API and a BullMQ worker — backed by PostgreSQL and Redis, with shared packages for types, validation and request execution.',
+      'It is a pnpm monorepo with three apps (a React frontend, an Express API and a BullMQ worker) backed by PostgreSQL and Redis, with shared packages for types, validation and request execution.',
     ],
     problem: [
       'Most API tools answer “what did this one request return?”. Teams running APIs in production need different answers: is the API up right now, is it getting slower, when did it start failing, and why?',
@@ -231,7 +231,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       {
         title: 'Server-side request forgery',
         description:
-          'TraceLayer sends requests to URLs its users choose. Private, loopback, link-local and cloud-metadata addresses are blocked, and the check runs on the address actually connected to — so DNS rebinding cannot bypass it — and again on every redirect.',
+          'TraceLayer sends requests to URLs its users choose. Private, loopback, link-local and cloud-metadata addresses are blocked, and the check runs on the address actually connected to, so DNS rebinding cannot bypass it. The check runs again on every redirect.',
       },
       {
         title: 'Alerts firing twice',
@@ -271,7 +271,7 @@ export const caseStudies: Record<string, CaseStudy> = {
 
   urbanpuls: {
     overview: [
-      'UrbanPuls is a traffic and parking management system built for Mumbai. It serves five roles — drivers, parking partners, gate attendants, field officers and admins — each with its own menu and home page.',
+      'UrbanPuls is a traffic and parking management system built for Mumbai. It serves five roles (drivers, parking partners, gate attendants, field officers and admins), each with its own menu and home page.',
       'The whole app is available in English, Hindi and Marathi.',
     ],
     problem: [
@@ -279,7 +279,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       'Illegal parking blocks roads, and citizens have no simple way to report it to someone who can act on it.',
     ],
     solution: [
-      'Drivers see live availability on a map, reserve a car or two-wheeler slot for a time window and get a QR code — nothing is paid online. At the gate, staff scan the QR to check the car in; at checkout the fee is worked out for the time actually parked and shown as a UPI QR for the exact amount, paid straight to the lot owner.',
+      'Drivers see live availability on a map, reserve a car or two-wheeler slot for a time window and get a QR code. Nothing is paid online. At the gate, staff scan the QR to check the car in; at checkout the fee is worked out for the time actually parked and shown as a UPI QR for the exact amount, paid straight to the lot owner.',
       'Citizens report problems with GPS location and a photo. Admins verify them, field officers resolve them on a map, and reporters follow a status timeline. A YOLO model checks camera photos for vehicles standing in no-parking areas and sends staff a live alert.',
     ],
     architecture: [
@@ -293,7 +293,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       {
         title: 'Reserve now, pay at the gate',
         description:
-          'Bookings come with a QR code. The fee covers actual time parked — at least one hour, then 30-minute steps — at the rate locked in when booking, minus reward points.',
+          'Bookings come with a QR code. The fee covers actual time parked (at least one hour, then 30-minute steps) at the rate locked in when booking, minus reward points.',
       },
       {
         title: 'Gate screen for partners',

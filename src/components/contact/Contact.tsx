@@ -36,7 +36,7 @@ export function Contact() {
     window.clearTimeout(timer.current);
     setToast({
       id: Date.now(),
-      text: ok ? 'Email copied' : 'Couldn’t copy — the address is shown above',
+      text: ok ? 'Email copied' : 'Couldn’t copy. The address is shown above.',
       tone: ok ? 'success' : 'error',
     });
     timer.current = window.setTimeout(() => setToast(null), TOAST_MS);
