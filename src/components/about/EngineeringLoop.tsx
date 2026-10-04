@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { RotateCcw } from 'lucide-react';
 import { engineeringLoop } from '../../data/about';
 
@@ -21,7 +21,7 @@ export function EngineeringLoop() {
 
       <ol className="relative space-y-0">
         {engineeringLoop.map((step, index) => (
-          <motion.li
+          <m.li
             key={step.label}
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -43,7 +43,7 @@ export function EngineeringLoop() {
               <span className="block text-sm font-medium">{step.label}</span>
               <span className="block font-mono text-xs text-fg-muted">{step.note}</span>
             </span>
-          </motion.li>
+          </m.li>
         ))}
       </ol>
 

@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 import { createPortal } from 'react-dom';
 
@@ -21,7 +21,7 @@ export function Toast({ message }: { message: ToastMessage | null }) {
     >
       <AnimatePresence>
         {message && (
-          <motion.div
+          <m.div
             key={message.id}
             initial={{ opacity: 0, y: 12, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -35,7 +35,7 @@ export function Toast({ message }: { message: ToastMessage | null }) {
               <X size={15} aria-hidden className="text-error" />
             )}
             {message.text}
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>,

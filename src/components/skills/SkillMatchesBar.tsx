@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import { X } from 'lucide-react';
 import { projects } from '../../data/projects';
 import { useSkillSelection } from '../../hooks/useSkillSelection';
@@ -16,7 +16,7 @@ export function SkillMatchesBar() {
     <div className="pointer-events-none sticky bottom-4 z-20 mt-10 lg:hidden">
       <AnimatePresence>
         {selected && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 12 }}
@@ -40,7 +40,7 @@ export function SkillMatchesBar() {
             >
               <X size={15} aria-hidden />
             </button>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

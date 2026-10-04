@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { ArrowUpRight, Expand, Images } from 'lucide-react';
 import { useState } from 'react';
 import { useSkillSelection } from '../../hooks/useSkillSelection';
@@ -32,7 +32,7 @@ export function ProjectShowcase({ project, reversed }: ProjectShowcaseProps) {
   const caseStudyHref = `/projects/${project.slug}`;
 
   return (
-    <motion.article
+    <m.article
       id={`project-${project.id}`}
       aria-labelledby={`project-${project.id}-title`}
       initial={{ opacity: 0, y: 24 }}
@@ -214,6 +214,6 @@ export function ProjectShowcase({ project, reversed }: ProjectShowcaseProps) {
         index={viewing}
         onChange={setViewing}
       />
-    </motion.article>
+    </m.article>
   );
 }

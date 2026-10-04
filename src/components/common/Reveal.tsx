@@ -1,4 +1,4 @@
-import { motion, type HTMLMotionProps } from 'framer-motion';
+import { m, type HTMLMotionProps } from 'framer-motion';
 
 interface RevealProps extends HTMLMotionProps<'div'> {
   delay?: number;
@@ -9,7 +9,7 @@ interface RevealProps extends HTMLMotionProps<'div'> {
 /** Fades content up once when it first enters the viewport. */
 export function Reveal({ delay = 0, y = 16, children, ...rest }: RevealProps) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '0px 0px -10% 0px' }}
@@ -17,6 +17,6 @@ export function Reveal({ delay = 0, y = 16, children, ...rest }: RevealProps) {
       {...rest}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

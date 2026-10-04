@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router';
@@ -81,18 +81,12 @@ export function Navbar() {
                 sectionId={item.id}
                 aria-current={isCurrent(item.id) ? 'location' : undefined}
                 className={cn(
-                  'relative rounded-full px-3.5 py-2 text-sm transition-colors',
-                  isCurrent(item.id) ? 'text-fg' : 'text-fg-secondary hover:text-fg',
+                  'rounded-full px-3.5 py-2 text-sm transition-colors duration-200',
+                  isCurrent(item.id)
+                    ? 'bg-surface-elevated text-fg'
+                    : 'text-fg-secondary hover:text-fg',
                 )}
               >
-                {isCurrent(item.id) && (
-                  <motion.span
-                    layoutId="nav-active"
-                    aria-hidden
-                    className="absolute inset-0 -z-10 rounded-full bg-surface-elevated"
-                    transition={{ type: 'spring', stiffness: 500, damping: 40 }}
-                  />
-                )}
                 {item.label}
               </SectionLink>
             </li>
@@ -117,7 +111,7 @@ export function Navbar() {
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             ref={panel}
             id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
@@ -146,7 +140,7 @@ export function Navbar() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </header>

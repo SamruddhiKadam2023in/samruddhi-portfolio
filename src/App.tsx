@@ -1,4 +1,4 @@
-import { MotionConfig } from 'framer-motion';
+import { domAnimation, LazyMotion, MotionConfig } from 'framer-motion';
 import { lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import { ErrorBoundary } from './components/common/ErrorBoundary';
@@ -8,8 +8,16 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import RouteError from './pages/RouteError';
 
-// Case studies are split out so the home page loads only what it needs.
-const ProjectDetails = lazy(() => import('./pages/ProjectDetails'));
+// Case studies are split out so the home page loads only what it needs,
+// then fetched in the background once the browser is idle so navigation stays instant.
+const loadProjectDetails = () => import('./pages/ProjectDetails');
+const ProjectDetails = lazy(loadProjectDetails);
+
+if (typeof window !== 'undefined') {
+  const prefetch = () => void loadProjectDetails();
+  if ('requestIdleCallback' in window) window.requestIdleCallback(prefetch, { timeout: 4000 });
+  else setTimeout(prefetch, 2500);
+}
 
 const router = createBrowserRouter([
   {
@@ -33,10 +41,13 @@ export default function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider>
-        {/* Honors prefers-reduced-motion for every Framer Motion animation. */}
-        <MotionConfig reducedMotion="user">
-          <RouterProvider router={router} />
-        </MotionConfig>
+        {/* Only the DOM animation features are bundled (strict: no full `motion` components). */}
+        <LazyMotion features={domAnimation} strict>
+          {/* Honors prefers-reduced-motion for every animation. */}
+          <MotionConfig reducedMotion="user">
+            <RouterProvider router={router} />
+          </MotionConfig>
+        </LazyMotion>
       </ThemeProvider>
     </ErrorBoundary>
   );

@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '../../hooks/useTheme';
 
@@ -16,7 +16,7 @@ export function ThemeToggle() {
       className="relative grid size-10 place-items-center overflow-hidden rounded-full border border-line text-fg-secondary transition-colors hover:border-line-strong hover:text-fg"
     >
       <AnimatePresence mode="wait" initial={false}>
-        <motion.span
+        <m.span
           key={theme}
           initial={{ y: -14, opacity: 0, rotate: -45 }}
           animate={{ y: 0, opacity: 1, rotate: 0 }}
@@ -25,7 +25,7 @@ export function ThemeToggle() {
           className="grid place-items-center"
         >
           {isDark ? <Moon size={17} aria-hidden /> : <Sun size={17} aria-hidden />}
-        </motion.span>
+        </m.span>
       </AnimatePresence>
     </button>
   );

@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import { ArrowDown, X } from 'lucide-react';
 import { projects } from '../../data/projects';
 import { useSkillSelection } from '../../hooks/useSkillSelection';
@@ -16,7 +16,7 @@ export function SkillMatches() {
     >
       <AnimatePresence mode="wait" initial={false}>
         {!selected ? (
-          <motion.p
+          <m.p
             key="empty"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -29,9 +29,9 @@ export function SkillMatches() {
             </span>
             Pick any technology to see which projects below use it. The matching projects are
             highlighted in the Projects section too.
-          </motion.p>
+          </m.p>
         ) : (
-          <motion.div
+          <m.div
             key={selected}
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ export function SkillMatches() {
                 Not used in the four projects featured here.
               </p>
             )}
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

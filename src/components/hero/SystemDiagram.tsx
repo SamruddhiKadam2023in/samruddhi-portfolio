@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { BrainCircuit, Database, Monitor, Network, type LucideIcon } from 'lucide-react';
 
 interface Layer {
@@ -39,7 +39,7 @@ export function SystemDiagram() {
           const last = index === layers.length - 1;
           return (
             <li key={layer.label} className="relative">
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.35 + index * 0.12, ease }}
@@ -57,11 +57,11 @@ export function SystemDiagram() {
                 <span aria-hidden className="font-mono text-[0.6875rem] text-fg-muted">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-              </motion.div>
+              </m.div>
 
               {!last && (
                 <div aria-hidden className="relative ml-[2.15rem] h-5 w-px overflow-hidden">
-                  <motion.span
+                  <m.span
                     initial={{ scaleY: 0 }}
                     animate={{ scaleY: 1 }}
                     transition={{ duration: 0.25, delay: 0.5 + index * 0.12, ease }}

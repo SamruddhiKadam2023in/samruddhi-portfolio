@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { ArrowDown, ArrowRight } from 'lucide-react';
 import { site } from '../../data/site';
 import { buttonClasses } from '../common/buttonClasses';
@@ -28,30 +28,30 @@ export function Hero() {
 
       <div className="container-page grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
         <div className="min-w-0 lg:col-span-7">
-          <motion.p
+          <m.p
             {...rise(0)}
             className="flex items-center gap-2.5 font-mono text-xs text-fg-secondary sm:text-sm"
           >
             <span aria-hidden className="size-1.5 rounded-full bg-accent" />
             {site.shortName} — {site.role}
-          </motion.p>
+          </m.p>
 
-          <motion.h1
+          <m.h1
             {...rise(0.06)}
             id="hero-title"
             className="mt-5 text-[2.5rem] leading-[1.05] font-semibold tracking-tight text-balance sm:text-6xl lg:text-[4.25rem]"
           >
             I build useful software and <span className="text-accent">intelligent systems.</span>
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             {...rise(0.12)}
             className="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-fg-secondary"
           >
             {site.description}
-          </motion.p>
+          </m.p>
 
-          <motion.div {...rise(0.18)} className="mt-9 flex flex-wrap items-center gap-3">
+          <m.div {...rise(0.18)} className="mt-9 flex flex-wrap items-center gap-3">
             <SectionLink sectionId="projects" className={buttonClasses({})}>
               <span>View Projects</span>
               <ArrowDown
@@ -68,23 +68,23 @@ export function Hero() {
                 className="transition-transform group-hover:translate-x-0.5"
               />
             </SectionLink>
-          </motion.div>
+          </m.div>
 
-          <motion.div {...rise(0.24)} className="mt-10 flex items-center gap-4">
+          <m.div {...rise(0.24)} className="mt-10 flex items-center gap-4">
             <span className="font-mono text-xs text-fg-muted">find me</span>
             <span aria-hidden className="h-px w-6 bg-line-strong" />
             <SocialLinks />
-          </motion.div>
+          </m.div>
         </div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease }}
           className="mx-auto w-full max-w-md min-w-0 lg:col-span-5 lg:max-w-none"
         >
           <SystemDiagram />
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

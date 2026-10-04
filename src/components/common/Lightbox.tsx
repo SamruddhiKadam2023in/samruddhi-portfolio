@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useCallback, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
@@ -54,7 +54,7 @@ export function Lightbox({ title, images, index, onChange }: LightboxProps) {
   return createPortal(
     <AnimatePresence>
       {open && image && (
-        <motion.div
+        <m.div
           key="lightbox"
           ref={dialog}
           role="dialog"
@@ -91,7 +91,7 @@ export function Lightbox({ title, images, index, onChange }: LightboxProps) {
             }}
           >
             <AnimatePresence mode="wait" initial={false}>
-              <motion.figure
+              <m.figure
                 key={image.src}
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -112,7 +112,7 @@ export function Lightbox({ title, images, index, onChange }: LightboxProps) {
                     {image.caption}
                   </figcaption>
                 )}
-              </motion.figure>
+              </m.figure>
             </AnimatePresence>
 
             {count > 1 && (
@@ -147,7 +147,7 @@ export function Lightbox({ title, images, index, onChange }: LightboxProps) {
               ))}
             </div>
           )}
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>,
     document.body,

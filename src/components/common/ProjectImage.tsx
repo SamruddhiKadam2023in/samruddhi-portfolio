@@ -57,6 +57,7 @@ export function ProjectImage({
       height={image.height}
       alt={image.alt}
       loading={eager ? 'eager' : 'lazy'}
+      fetchPriority={eager ? 'high' : 'auto'}
       decoding="async"
       onError={() => setFailed(true)}
       style={{ aspectRatio }}

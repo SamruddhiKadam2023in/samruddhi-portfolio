@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import type { Project } from '../../../types/project';
 import { GithubIcon } from '../../common/BrandIcons';
@@ -28,7 +28,7 @@ export function CaseStudyHero({ project }: { project: Project }) {
           all projects
         </SectionLink>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease }}
@@ -79,17 +79,17 @@ export function CaseStudyHero({ project }: { project: Project }) {
               </ButtonLink>
             )}
           </div>
-        </motion.div>
+        </m.div>
 
         {cover && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.1, ease }}
             className="mt-12 overflow-hidden rounded-2xl border border-line bg-surface shadow-card"
           >
             <ProjectImage image={cover} sizes="(min-width: 1152px) 1088px, 100vw" eager />
-          </motion.div>
+          </m.div>
         )}
       </div>
     </header>
