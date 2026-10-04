@@ -11,15 +11,15 @@ export const skillCategories: SkillCategory[] = [
 
 // Project mappings come from each repository's dependencies and source:
 // PropAI (FastAPI + React/JS), TraceLayer (Express + React/TS),
-// UrbanPlus (FastAPI + React/JS + YOLO11), ISRO (Python, OpenCV, YOLOv8, PyQt6).
-const ALL_WEB = ['propai', 'tracelayer', 'urbanplus'];
+// UrbanPuls (FastAPI + React/JS + YOLO11), ISRO (Python, OpenCV, YOLOv8, PyQt6).
+const ALL_WEB = ['propai', 'tracelayer', 'urbanpuls'];
 const ALL = [...ALL_WEB, 'isro'];
 
 export const skills: Skill[] = [
   // Languages
-  { name: 'JavaScript', category: 'languages', projects: ['propai', 'urbanplus'] },
+  { name: 'JavaScript', category: 'languages', projects: ['propai', 'urbanpuls'] },
   { name: 'TypeScript', category: 'languages', projects: ['tracelayer'] },
-  { name: 'Python', category: 'languages', projects: ['propai', 'urbanplus', 'isro'] },
+  { name: 'Python', category: 'languages', projects: ['propai', 'urbanpuls', 'isro'] },
   { name: 'Java', category: 'languages', projects: [] },
   { name: 'SQL', category: 'languages', projects: ALL_WEB },
 
@@ -33,7 +33,7 @@ export const skills: Skill[] = [
   // Backend
   { name: 'Node.js', category: 'backend', projects: ['tracelayer'] },
   { name: 'Express.js', category: 'backend', projects: ['tracelayer'] },
-  { name: 'FastAPI', category: 'backend', projects: ['propai', 'urbanplus'] },
+  { name: 'FastAPI', category: 'backend', projects: ['propai', 'urbanpuls'] },
   { name: 'REST APIs', category: 'backend', projects: ALL_WEB },
 
   // Databases
@@ -42,9 +42,9 @@ export const skills: Skill[] = [
   { name: 'Prisma', category: 'databases', projects: ['tracelayer'] },
 
   // AI / ML
-  { name: 'Machine Learning', category: 'ai-ml', projects: ['propai', 'urbanplus', 'isro'] },
-  { name: 'OpenCV', category: 'ai-ml', projects: ['propai', 'urbanplus', 'isro'] },
-  { name: 'YOLO', category: 'ai-ml', projects: ['urbanplus', 'isro'] },
+  { name: 'Machine Learning', category: 'ai-ml', projects: ['propai', 'urbanpuls', 'isro'] },
+  { name: 'OpenCV', category: 'ai-ml', projects: ['propai', 'urbanpuls', 'isro'] },
+  { name: 'YOLO', category: 'ai-ml', projects: ['urbanpuls', 'isro'] },
   { name: 'Tesseract OCR', category: 'ai-ml', projects: ['propai'] },
   { name: 'NLP', category: 'ai-ml', projects: ['propai'] },
   { name: 'LLMs', category: 'ai-ml', projects: [] },

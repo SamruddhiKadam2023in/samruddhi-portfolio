@@ -1,12 +1,13 @@
 import { About } from '../components/about/About';
 import { Hero } from '../components/hero/Hero';
+import { Projects } from '../components/projects/Projects';
 import { TechStrip } from '../components/hero/TechStrip';
 import { SkillSelectionProvider } from '../components/skills/SkillSelectionProvider';
 import { Skills } from '../components/skills/Skills';
 import { navItems } from '../data/site';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
-const built = new Set(['home', 'about', 'skills']);
+const built = new Set(['home', 'about', 'skills', 'projects']);
 
 export default function Home() {
   useDocumentTitle();
@@ -17,6 +18,7 @@ export default function Home() {
       <TechStrip />
       <About />
       <Skills />
+      <Projects />
       {/* Placeholder sections, replaced phase by phase. */}
       {navItems
         .filter((item) => !built.has(item.id))
