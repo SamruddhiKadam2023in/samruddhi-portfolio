@@ -1,5 +1,5 @@
 import { m } from 'framer-motion';
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import type { Project } from '../../../types/project';
 import { GithubIcon } from '../../common/BrandIcons';
 import { ButtonLink } from '../../common/Button';
@@ -36,7 +36,7 @@ export function CaseStudyHero({ project }: { project: Project }) {
         >
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             <span className="font-mono text-sm text-accent">{project.number}</span>
-            <span aria-hidden className="h-px w-6 bg-line-strong" />
+            <ArrowRight size={14} aria-hidden className="shrink-0 text-fg-muted" />
             <ProjectTypeBadge type={project.projectType} />
             <span className="font-mono text-xs text-fg-muted">{project.category}</span>
           </div>

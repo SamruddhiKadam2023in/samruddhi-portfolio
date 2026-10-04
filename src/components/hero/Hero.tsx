@@ -76,7 +76,7 @@ export function Hero() {
 
           <m.div {...rise(0.24)} className="mt-10 flex items-center gap-4">
             <span className="font-mono text-xs text-fg-muted">find me</span>
-            <span aria-hidden className="h-px w-6 bg-line-strong" />
+            <ArrowRight size={14} aria-hidden className="shrink-0 text-fg-muted" />
             <SocialLinks />
           </m.div>
         </div>

@@ -1,5 +1,5 @@
 import { m } from 'framer-motion';
-import { ArrowUpRight, Expand, Images } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Expand, Images } from 'lucide-react';
 import { useState } from 'react';
 import { useSkillSelection } from '../../hooks/useSkillSelection';
 import type { Project } from '../../types/project';
@@ -74,7 +74,7 @@ export function ProjectShowcase({ project, reversed }: ProjectShowcaseProps) {
               </span>
             </button>
           ) : (
-            <div className="grid aspect-[16/9] place-items-center rounded-xl border border-dashed border-line-strong font-mono text-xs text-fg-muted">
+            <div className="grid aspect-[16/9] place-items-center rounded-xl border border-line-strong font-mono text-xs text-fg-muted">
               [screenshot pending]
             </div>
           )}
@@ -114,7 +114,7 @@ export function ProjectShowcase({ project, reversed }: ProjectShowcaseProps) {
         <div className={cn('lg:col-span-5', reversed && 'lg:order-1')}>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             <span className="font-mono text-sm text-accent">{project.number}</span>
-            <span aria-hidden className="h-px w-6 bg-line-strong" />
+            <ArrowRight size={14} aria-hidden className="shrink-0 text-fg-muted" />
             <ProjectTypeBadge type={project.projectType} />
           </div>
 

@@ -49,7 +49,7 @@ export function EngineeringLoop() {
 
       <div
         aria-hidden
-        className="mt-5 flex items-center gap-2 border-t border-dashed border-line pt-4 font-mono text-[0.6875rem] text-fg-muted"
+        className="mt-5 flex items-center gap-2 border-t border-line pt-4 font-mono text-[0.6875rem] text-fg-muted"
       >
         <RotateCcw size={12} className="text-accent" />
         back to 01 with what was learned

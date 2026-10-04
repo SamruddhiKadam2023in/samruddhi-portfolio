@@ -1,4 +1,4 @@
-import { ArrowUpRight, Copy, Mail } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Copy, Mail } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { social } from '../../data/social';
 import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
@@ -56,7 +56,7 @@ export function Contact() {
         <Reveal className="max-w-3xl">
           <p className="mb-4 flex items-center gap-3 font-mono text-xs tracking-wider text-fg-muted uppercase">
             <span className="text-accent">04</span>
-            <span aria-hidden className="h-px w-8 bg-line-strong" />
+            <ArrowRight size={14} aria-hidden className="shrink-0 text-fg-muted" />
             <span>Contact</span>
           </p>
           <h2

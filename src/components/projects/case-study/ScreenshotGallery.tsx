@@ -15,7 +15,7 @@ export function ScreenshotGallery({ title, images }: ScreenshotGalleryProps) {
 
   if (images.length === 0) {
     return (
-      <p className="rounded-xl border border-dashed border-line-strong p-8 text-center font-mono text-sm text-fg-muted">
+      <p className="rounded-xl border border-line-strong p-8 text-center font-mono text-sm text-fg-muted">
         [screenshots pending]
       </p>
     );
