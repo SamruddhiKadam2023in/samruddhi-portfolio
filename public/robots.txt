@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://samruddhi-portfolio.vercel.app/sitemap.xml
+Sitemap: https://samruddhi-portfolio-black.vercel.app/sitemap.xml
