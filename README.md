@@ -7,21 +7,6 @@ applications, developer tools and intelligent systems.
 
 ![Portfolio preview](public/og-image.png)
 
-## Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Tech stack](#tech-stack)
-- [Projects featured](#projects-featured)
-- [Project structure](#project-structure)
-- [Local setup](#local-setup)
-- [Commands](#commands)
-- [Updating content](#updating-content)
-- [Screenshots](#screenshots)
-- [Deployment](#deployment)
-- [Quality checks](#quality-checks)
-- [Future improvements](#future-improvements)
-
 ## Overview
 
 A frontend-only single-page application built with React, TypeScript and Vite. The home page has
